@@ -1,28 +1,43 @@
 import time
-start_time = time.time()
-import os
-from tkinter import *
-count=0
-def click():#This is a function that will be called when the button is clicked
-    global count
-    count+=1
-    print("Button clicked", count, "times")#This is a function that will print the number of times the button has been clicked
+import tkinter as tk
 
-window = Tk()#This creates a window using the Tkinter library
-window.geometry("450x450")#This sets the size of the window
-window.title("Calculator")#This sets the title of the window
-base=os.path.dirname(os.path.abspath(__file__))
-icon = PhotoImage(file=r'D:\Coding\download.png')
-window.iconphoto(True, icon)
+start_time = time.time()
+
+def click(number):
+    current = display.get()
+    display.delete(0, tk.END)
+    display.insert(0, current + str(number))
+
+window = tk.Tk()
+window.geometry("300x350")
+window.title("Calculator")
 window.configure(bg="white")
-label = Label(window, text="Calculator", 
-              font=("Arial", 20, "bold"), 
-              bg="white", 
-              fg="black")#This is a function that will create a label with the text "Calculator" and set the font, background color, and foreground color
-label.pack(pady=10)
-button=Button(window, text="click me",
-              command=click,
-              font=("Comic Sans MS", 25))#This is a function called button that is used to click to perform a function and can modify the button
-button.pack(pady=10)
-print("Time taken to load the program: ", round(time.time() - start_time, 5), "seconds")#This is a function that will print the time taken to load the program
-window.mainloop()#This is a function that will keep the window open until the user closes it
+
+display = tk.Entry(window, font=("Arial", 24), justify="right")
+display.grid(row=0, column=0, columnspan=3, padx=10, pady=10, sticky="nsew")
+
+for number in range(10):
+    row = number // 3 + 1
+    column = number % 3
+
+    button = tk.Button(
+        window,
+        text=str(number),
+        font=("Arial", 18),
+        command=lambda n=number: click(n),
+    )
+    button.grid(row=row, column=column, padx=5, pady=5, sticky="nsew")
+
+for column in range(3):
+    window.grid_columnconfigure(column, weight=1)
+
+for row in range(5):
+    window.grid_rowconfigure(row, weight=1)
+
+print(
+    "Time taken to load the program:",
+    round(time.time() - start_time, 5),
+    "seconds"
+)
+
+window.mainloop()
