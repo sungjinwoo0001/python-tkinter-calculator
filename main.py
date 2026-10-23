@@ -34,6 +34,11 @@ for column in range(3):
 for row in range(5):
     window.grid_rowconfigure(row, weight=1)
 
+delete_button= tk.Button(window, text="Delete", command=lambda: display.delete(0,tk.END), font=("Arial", 10))
+delete_button.grid(row=4, column=0, padx=5, pady=5, sticky="nsew")
+backspace_button= tk.Button(window, text="Backspace", command=lambda: display.delete(len(display.get())-1, tk.END), font=("Arial", 10))
+backspace_button.grid(row=4, column=1, padx=5, pady=5, sticky="nsew")
+
 print(
     "Time taken to load the program:",
     round(time.time() - start_time, 5),
