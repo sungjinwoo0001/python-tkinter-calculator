@@ -1,0 +1,23 @@
+[33mcommit 59818e50e736dd6131d98a880991b097542e98df[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Pruthviraj <rajpruthvi2621@gmail.com>
+Date:   Sat Oct 24 00:16:14 2026 +0530
+
+    Added Delete and Backspace key
+
+[33mcommit 6218088d81f56a41a6680c638b94cba9bd268c59[m
+Author: Pruthviraj <rajpruthvi2621@gmail.com>
+Date:   Sat Oct 24 00:06:06 2026 +0530
+
+    Fix calculator number buttons and display
+
+[33mcommit 47ab9a5542010be24e38473539071760a5d5365c[m
+Author: Pruthviraj <rajpruthvi2621@gmail.com>
+Date:   Thu Oct 22 23:21:07 2026 +0530
+
+    Caculator basic
+
+[33mcommit e37b3a8c0b6d560ba22ca46c1599f25dd1dc8d97[m
+Author: Pruthviraj <rajpruthvi2621@gmail.com>
+Date:   Thu Oct 22 23:18:20 2026 +0530
+
+    Create calculator project
